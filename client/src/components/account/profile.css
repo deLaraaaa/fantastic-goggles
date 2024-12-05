@@ -1,0 +1,51 @@
+.profile-body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 99.9vh;
+}
+
+.profile-image {
+    border-radius: 6em;
+    width: 10vw;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+    width: 50vw;
+    justify-content: space-around;
+}
+
+.profile-header {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px 6vh 20px;
+}
+
+.profile-button img {
+    width: 32px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 48px;
+    margin: 0;
+}
+
+.profile-email {
+    margin: 0;
+}
+
+.profile-footer {
+    display: flex;
+    justify-content: center;
+}

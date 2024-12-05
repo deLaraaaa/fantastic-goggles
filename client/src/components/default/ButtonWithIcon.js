@@ -1,5 +1,5 @@
 import React from 'react';
-import "../account.css";
+import "../account/account.css";
 
 const ButtonWithIcon = ({ onClick, name, imageSrc }) => {
     return (

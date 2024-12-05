@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import "../account.css";
+import "./account.css";
 import ButtonWithIcon from '../default/ButtonWithIcon';
 import googleIcon from "../../img/googleicon.png";
 import blockchainIcon from "../../img/blockchainicon.png";

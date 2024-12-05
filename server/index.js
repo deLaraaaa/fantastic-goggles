@@ -48,7 +48,6 @@ app.get('/profile', async (req, res) => {
     try {
         const decodedToken = await admin.auth().verifyIdToken(idToken);
         const user = decodedToken;
-        console.info("index.js | FTH.RL.51 | ", JSON.stringify(user));
         res.status(200).json({ name: user.name, email: user.email, photoURL: user.picture });
     } catch (error) {
         res.status(401).json({ error: 'Unauthorized' });

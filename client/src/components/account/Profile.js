@@ -3,10 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { getAuth, signOut } from 'firebase/auth';
 import 'react-toastify/dist/ReactToastify.css';
+import Home from "../../img/home.svg";
+import Logout from "../../img/logout.svg";
+import favoriteIcon from "../../img/favorite_empty.svg";
+import ButtonWithIcon from '../default/ButtonWithIcon';
+import './profile.css';
 
 const Profile = () => {
     const navigate = useNavigate();
     const [userData, setUserData] = useState({ name: '', email: '', photoURL: '' });
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function fetchUserData() {
@@ -27,8 +33,10 @@ const Profile = () => {
                     navigate('/login');
                 }
             } catch (error) {
-                toast.error(error.message);
+                toast.error(`Failed to fetch user data: ${error.message}`);
                 navigate('/login');
+            } finally {
+                setLoading(false);
             }
         };
 
@@ -41,17 +49,41 @@ const Profile = () => {
             await signOut(auth);
             navigate('/login');
         } catch (error) {
-            toast.error(error.message);
+            toast.error(`Failed to log out: ${error.message}`);
         }
     }
 
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
     return (
-        <div>
-            <h1>User Profile</h1>
-            {userData.photoURL && <img src={userData.photoURL} alt="Profile" />}
-            <p>{userData.name}</p>
-            <p>{userData.email}</p>
-            <button onClick={handleLogout}>Logout</button>
+        <div className='profile-body'>
+            <div className='profile-header'>
+                <button className='profile-button'><img src={Home} alt="Home" /></button>
+                <button className='profile-button' onClick={handleLogout}><img src={Logout} alt="Logout" /></button>
+            </div>
+            <div className='profile-card'>
+                <div>
+                    {userData.photoURL && (
+                        <img
+                            src={userData.photoURL}
+                            className="profile-image"
+                            alt="Profile"
+                        />
+                    )}
+                </div>
+                <div className='profile-info'>
+                    <p className='profile-name'>{userData.name}</p>
+                    <p className='profile-email'>{userData.email}</p>
+                </div>
+                <div className='profile-footer'>
+                    <ButtonWithIcon
+                        name="Wishlist"
+                        imageSrc={favoriteIcon}
+                    />
+                </div>
+            </div>
             <ToastContainer />
         </div>
     );

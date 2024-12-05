@@ -1,0 +1,68 @@
+/* div {
+    border: 1px solid red
+} */
+
+body {
+    font-family: 'Parkinsans', sans-serif;
+    background-color: #1d1d1d;
+}
+
+.title-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F7F7;
+    border-radius: 0.5em;
+    width: 50%;
+    height: 8vh;
+}
+
+.button {
+    color: #F7F7F7;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #090909;
+    cursor: pointer;
+    border: 1px solid #090909;
+    transition: all 0.3s;
+    box-shadow: 3px 3px 16px #090909, -3px -3px 16px #090909;
+}
+
+.button:hover {
+    border: 1px solid #F7F7F7;
+}
+
+.button:active {
+    box-shadow: 4px 4px 12px #090909, -4px -4px 12px #090909;
+}
+
+.profile-body {
+    background-image: url("../../img/layered-waves-haikei.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.profile-card {
+    background-color: #EEEEEE;
+    border-radius: 2em;
+    box-shadow: inset 3px 3px 12px #1d1d1d;
+}
+
+.profile-button {
+    padding: 0.3em 0.5em;
+    border-radius: 0.5em;
+    background-color: #1d1d1d;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.profile-button:hover {
+    box-shadow: 4px 4px 12px #090909, -4px -4px 12px #090909;
+}
+
+.profile-button:active {
+    box-shadow: 4px 4px 12px #090909, -4px -4px 12px #090909;
+}
